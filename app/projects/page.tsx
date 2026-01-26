@@ -1,4 +1,6 @@
 import Link from "next/link";
+("use client");
+
 import ProjectCard from "../components/ProjectCard";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
