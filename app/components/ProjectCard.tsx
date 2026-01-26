@@ -9,6 +9,7 @@ type ProjectCardProps = {
   techStack: string[];
   description: string[];
   link: string;
+  index: number;
 };
 
 export default function ProjectCard({
@@ -17,6 +18,7 @@ export default function ProjectCard({
   techStack,
   description,
   link,
+  index,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -24,7 +26,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.4,
-        // delay: index * 0.1
+        delay: index * 0.1,
       }}
       className="h-full"
     >

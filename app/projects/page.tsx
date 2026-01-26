@@ -232,7 +232,7 @@ export default function ProjectsPage() {
           lg:grid-cols-3"
         >
           {PROJECTS.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={index} {...project} index={index} />
           ))}
         </div>
       </div>
