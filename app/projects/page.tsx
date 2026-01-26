@@ -1,7 +1,7 @@
+"use client";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
-("use client");
 
 const PROJECTS = [
   {

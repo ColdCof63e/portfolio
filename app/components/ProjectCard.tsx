@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -16,9 +19,18 @@ export default function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <Link href={link} className="block group">
-      <div
-        className="bg-white 
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.4,
+        // delay: index * 0.1
+      }}
+      className="h-full"
+    >
+      <Link href={link} className="block group h-full">
+        <div
+          className="bg-white 
             dark:bg-gray-800 
             rounded-xl 
             overflow-hidden 
@@ -34,15 +46,15 @@ export default function ProjectCard({
             h-full 
             flex 
             flex-col"
-      >
-        <div
-          className="p-6 
+        >
+          <div
+            className="p-6 
         flex-1 
         flex 
         flex-col"
-        >
-          <h3
-            className="text-xl 
+          >
+            <h3
+              className="text-xl 
             font-bold 
             mb-2 
             text-gray-900 
@@ -50,36 +62,36 @@ export default function ProjectCard({
             group-hover:text-blue-600 
             dark:group-hover:text-blue-400 
             transition-colors"
-          >
-            {title}
-            <p
-              className="inline 
+            >
+              {title}
+              <p
+                className="inline 
               dark:text-gray-400
               text-lg"
-            >
-              {" | "}
-            </p>
-            <p
-              className="inline 
+              >
+                {" | "}
+              </p>
+              <p
+                className="inline 
               text-xs 
               text-gray-600 
               dark:text-gray-300 
               italic"
-            >
-              {platform}
-            </p>
-          </h3>
-          <p
-            className="text-xs
+              >
+                {platform}
+              </p>
+            </h3>
+            <p
+              className="text-xs
             text-gray-600 
             dark:text-gray-300 
             italic mb-2"
-          >
-            {techStack.join(", ")}
-          </p>
+            >
+              {techStack.join(", ")}
+            </p>
 
-          <ul
-            className="list-disc 
+            <ul
+              className="list-disc 
             list-outside 
             ml-4 
             text-gray-600 
@@ -89,14 +101,14 @@ export default function ProjectCard({
             mb-4 
             flex-1 
             space-y-1"
-          >
-            {description.map((desc, index) => (
-              <li key={index}>{desc}</li>
-            ))}
-          </ul>
+            >
+              {description.map((desc, index) => (
+                <li key={index}>{desc}</li>
+              ))}
+            </ul>
 
-          <div
-            className="text-blue-600 
+            <div
+              className="text-blue-600 
             dark:text-blue-400 
             font-medium 
             text-sm 
@@ -107,11 +119,12 @@ export default function ProjectCard({
             -translate-x-2 
             group-hover:translate-x-0 
             duration-300"
-          >
-            Github Link &rarr;
+            >
+              Github Link &rarr;
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 }
