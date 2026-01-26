@@ -1,8 +1,26 @@
-import app from "next/app";
+import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
-import { Server } from "http";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const PROJECTS = [
+  {
+    title: "Portfolio",
+    platform: "Web Application",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Shadcn UI",
+      "Google Agentic AI - Antigravity",
+    ],
+    description: [
+      "Built modern portfolio website using Next.js and TypeScript, implementing responsive design and dynamic content loading with Shadcn UI components and Framer Motion for smooth animations",
+      "Integrated Google Agentic AI - Antigravity for AI-powered content generation and optimization, enhancing user experience and website functionality",
+      "Optimized website performance through rigorous lifecycle debugging and memory management, ensuring smooth camera operations and responsive AI processing",
+    ],
+    link: "",
+  },
   {
     title: "Point and Say",
     platform: "Android",
@@ -168,18 +186,50 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <main
+      className="min-h-screen 
+      bg-gray-50 
+      dark:bg-gray-900 
+      py-12 
+      px-4 
+      sm:px-6 
+      lg:px-8"
+    >
+      <Link href="/">
+        <ArrowLeftIcon className="inline content-start w-6 h-6" /> Back
+      </Link>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+          <h1
+            className="text-4xl 
+            font-extrabold 
+            text-gray-900 
+            dark:text-white 
+            sm:text-5xl 
+            sm:tracking-tight 
+            lg:text-6xl"
+          >
             My Projects
           </h1>
-          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500 dark:text-gray-400">
+          <p
+            className="mt-5 
+            max-w-xl 
+            mx-auto 
+            text-xl 
+            text-gray-500 
+            dark:text-gray-400"
+          >
             A selection of my recent work and experiments.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className="grid 
+          grid-cols-1 
+          gap-8 
+          sm:grid-cols-2 
+          lg:grid-cols-3"
+        >
           {PROJECTS.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}

@@ -52,12 +52,13 @@ export default function ProjectCard({
             transition-colors"
           >
             {title}
-            <h4
+            <p
               className="inline 
-              dark:text-gray-400"
+              dark:text-gray-400
+              text-lg"
             >
               {" | "}
-            </h4>
+            </p>
             <p
               className="inline 
               text-xs 
